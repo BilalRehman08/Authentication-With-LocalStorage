@@ -73,3 +73,10 @@ function logout() {
         location.href = "login.html";
     }, 1000);
 }
+
+
+function getUser() {
+    var detial = document.getElementById("username");
+    var user = JSON.parse(localStorage.getItem("user"));
+    detial.innerHTML = "Hello " + user.name;
+}

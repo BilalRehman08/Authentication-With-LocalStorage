@@ -20,12 +20,12 @@
     <title>Document</title>
 </head>
 
-<body>
+<body onload="getUser()">
     <div class="container">
         <div class="row">
             <div class="col-md-6 ">
                 <div class="card">
-                    <form onsubmit="event.preventDefault()" class="box">
+                    <form onsubmit="return false" class="box">
                         <h1 id="username"></h1>
                         <input type="submit" name="" value="Logout" href="#" onclick="logout()">
                         <div class="alert alert-dark" role="alert" id="message"></div>
