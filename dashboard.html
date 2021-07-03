@@ -21,19 +21,63 @@
 </head>
 
 <body onload="getUser()">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 ">
-                <div class="card">
-                    <form onsubmit="return false" class="box">
-                        <h1 id="username"></h1>
-                        <input type="submit" name="" value="Logout" href="#" onclick="logout()">
-                        <div class="alert alert-dark" role="alert" id="message"></div>
-                    </form>
-                </div>
+
+    <div class="row">
+        <div class="col-md-4 ">
+            <div class="userInfo">
+
+                <h4 id="getname"></h4>
+                <hr>
+                <h4 id="getemail"></h4>
+                <hr>
+                <h4 id="getphone"></h4>
+                <hr>
+                <h4 id="getaddress"></h4>
+                <hr>
+                <input type="submit" name="" value="Logout" href="#" onclick="logout()">
+                <hr>
+                <div class="alert alert-dark" role="alert" id="message"></div>
+
             </div>
         </div>
+        <div class="col-md-4 ">
+            <div class="card">
+
+                <h1>Details</h1>
+
+                <input type="text" name="" placeholder="Title" id="title">
+                <hr>
+                <input type="text" name="" placeholder="Description" id="description">
+                <hr>
+
+                <input type="submit" name="" value="Done" href="#" onclick="setDetails() ">
+
+
+
+
+
+            </div>
+
+        </div>
+        <div class="col-md-4 ">
+            <div class="card">
+
+                <h1>Details</h1>
+
+                <h3 id="getTitle"></h3>
+                <h3 id="getDescription"></h3>
+
+
+
+
+
+
+
+            </div>
+
+        </div>
     </div>
+
 </body>
 <script src="app.js"></script>
 

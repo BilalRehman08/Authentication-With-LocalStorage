@@ -74,9 +74,49 @@ function logout() {
     }, 1000);
 }
 
+function setDetails() {
+    var title = document.getElementById("title")
+    var description = document.getElementById("description");
+
+    var detail = {
+        title: title.value,
+        description: description.value
+    }
+
+    localStorage.setItem("detail", JSON.stringify(detail));
+    var getTitle = document.getElementById("getTitle");
+    var getdescription = document.getElementById("getDescription");
+    var getdetail = JSON.parse(localStorage.getItem("detail"));
+
+
+    getTitle.innerHTML = "Title: " + getdetail.title;
+    getdescription.innerHTML = "Description: " + getdetail.description;
+
+}
+
+
+
+
 
 function getUser() {
-    var detial = document.getElementById("username");
+    var getname = document.getElementById("getname");
     var user = JSON.parse(localStorage.getItem("user"));
-    detial.innerHTML = "Hello " + user.name;
+    getname.innerHTML = "Name: " + user.name;
+
+    var getemail = document.getElementById("getemail");
+    var user = JSON.parse(localStorage.getItem("user"));
+    getemail.innerHTML = "Email: " + user.email;
+
+    var getphone = document.getElementById("getphone");
+    var user = JSON.parse(localStorage.getItem("user"));
+    getphone.innerHTML = "Phone: " + user.contact;
+
+    var getaddress = document.getElementById("getaddress");
+    var user = JSON.parse(localStorage.getItem("user"));
+    getaddress.innerHTML = "address: " + user.address;
+
+
+
+
+
 }
