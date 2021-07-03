@@ -36,7 +36,7 @@ function signup() {
 function login() {
     var email = document.getElementById("email");
     var password = document.getElementById("password");
-
+    var message = document.getElementById("message");
     var user = {
         email: email.value,
         password: password.value,
@@ -47,4 +47,17 @@ function login() {
     var currentUser = users.find(val =>
         val.email.toLowerCase() === user.email.toLowerCase() && val.password === user.password
     );
+
+    if (currentUser) {
+        localStorage.setItem("user", JSON.stringify(currentUser));
+        // user login
+        location.href = "dashboard.html";
+    } else {
+        message.innerHTML = "Invalid credentials";
+        setTimeout(() => {
+            message.innerHTML = "";
+        }, 2000);
+    }
+
+
 }

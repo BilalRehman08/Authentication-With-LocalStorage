@@ -25,13 +25,13 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
-                    <form onsubmit="event.preventDefault()" class="box">
+                    <form onsubmit="return false" class="box">
                         <h1>Login</h1>
                         <p class="text-muted"> Please enter your login and password!</p>
                         <input type="text" name="" placeholder="Email" id="email">
                         <input type="password" name="" placeholder="Password" id="password">
                         <a class="forgot text-muted" href="signup.html">Don't Have an Account?</a>
-                        <input type="submit" name="" value="Login" href="#">
+                        <input type="submit" name="" value="Login" href="#" onclick="login()">
                         <div class="alert alert-dark" role="alert" id="message"></div>
                     </form>
 
