@@ -60,4 +60,16 @@ function login() {
     }
 
 
+
+}
+
+
+function logout() {
+    var message = document.getElementById("message");
+    localStorage.removeItem("user");
+    message.innerHTML = "Good Bye.!";
+    // clear state
+    setTimeout(() => {
+        location.href = "login.html";
+    }, 1000);
 }
