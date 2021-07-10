@@ -1,4 +1,4 @@
-function signup() {
+const signup = _ => {
     var name = document.getElementById("name");
     var email = document.getElementById("email");
     var password = document.getElementById("password");
@@ -33,7 +33,7 @@ function signup() {
 
 }
 
-function login() {
+const login = _ => {
     var email = document.getElementById("email");
     var password = document.getElementById("password");
     var message = document.getElementById("message");
@@ -64,7 +64,7 @@ function login() {
 }
 
 
-function logout() {
+const logout = _ => {
     var message = document.getElementById("message");
     localStorage.removeItem("user");
     message.innerHTML = "Good Bye.!";
@@ -74,7 +74,7 @@ function logout() {
     }, 1000);
 }
 
-function setDetails() {
+const setDetails = _ => {
     var title = document.getElementById("title")
     var description = document.getElementById("description");
 
@@ -95,10 +95,7 @@ function setDetails() {
 }
 
 
-
-
-
-function getUser() {
+const getUser = _ => {
     var getname = document.getElementById("getname");
     var user = JSON.parse(localStorage.getItem("user"));
     getname.innerHTML = "Name: " + user.name;
@@ -114,9 +111,5 @@ function getUser() {
     var getaddress = document.getElementById("getaddress");
     var user = JSON.parse(localStorage.getItem("user"));
     getaddress.innerHTML = "address: " + user.address;
-
-
-
-
 
 }
