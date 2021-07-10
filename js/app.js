@@ -51,7 +51,7 @@ const login = _ => {
     if (currentUser) {
         localStorage.setItem("user", JSON.stringify(currentUser));
         // user login
-        location.href = "dashboard.html";
+        location.href = "home.html";
     } else {
         message.innerHTML = "Invalid credentials";
         setTimeout(() => {
@@ -79,9 +79,14 @@ const setDetails = _ => {
     var title = document.getElementById("title")
     var description = document.getElementById("description");
 
-    var post = document.createElement("li");
-    post.id = "post";
-    post.innerHTML = `
+
+    if ((title.value = "") && (description.value = "")) {
+        alert("Tile or Description must be entered")
+    }
+    else {
+        var post = document.createElement("li");
+        post.id = "post";
+        post.innerHTML = `
     <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="https://image.freepik.com/free-vector/hand-drawn-web-developers_23-2148819604.jpg" alt="Card image cap">
   <div class="card-body">
@@ -90,11 +95,11 @@ const setDetails = _ => {
   </div>
 </div>
     `
-    posts.appendChild(post);
-    title.value = ''
-    description.value = ''
-    console.log("a");
-
+        posts.appendChild(post);
+        title.value = ''
+        description.value = ''
+        console.log("a");
+    }
 
 }
 
