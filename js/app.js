@@ -17,7 +17,7 @@ const signup = _ => {
     var users = JSON.parse(localStorage.getItem("users")) || [];
     var userIndex = users.findIndex(val => val.email.toLowerCase() === user.email.toLowerCase());
 
-    if (userIndex === -1) {
+    if (userIndex === -1 && (name.value != "" || email.value != "" || password.value != "" || contact.value != "" || address.value != "")) {
         users.push(user);
         localStorage.setItem("users", JSON.stringify(users));
         message.innerHTML = "SignUp Successful";
@@ -26,8 +26,17 @@ const signup = _ => {
             location.href = "login.html";
         }, 1000);
     }
+    else if (name.value === "" || email.value === "" || password.value === "" || contact.value === "" || address.value === "") {
+        message.innerHTML = user.email + "User info can't be empty";
+        setTimeout(() => {
+            message.innerHTML = "";
+        }, 2000);
+    }
     else {
-        message.innerHTML = user.email + " use in another account";
+        message.innerHTML = user.email + "Use in another account";
+        setTimeout(() => {
+            message.innerHTML = "";
+        }, 2000);
     }
 
 
@@ -52,7 +61,14 @@ const login = _ => {
         localStorage.setItem("user", JSON.stringify(currentUser));
         // user login
         location.href = "home.html";
-    } else {
+    }
+    else if (email.value === "" || password.value === "") {
+        message.innerHTML = user.email + "User info can't be empty";
+        setTimeout(() => {
+            message.innerHTML = "";
+        }, 2000);
+    }
+    else {
         message.innerHTML = "Invalid credentials";
         setTimeout(() => {
             message.innerHTML = "";
