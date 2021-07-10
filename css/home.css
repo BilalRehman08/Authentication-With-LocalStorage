@@ -26,6 +26,11 @@ body {
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 
+hr{
+  background-color: rgb(73, 71, 71);
+  color: rgb(93, 92, 92);
+}
+
 hr {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
