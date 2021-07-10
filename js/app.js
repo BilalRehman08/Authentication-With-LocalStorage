@@ -107,18 +107,18 @@ const setDetails = _ => {
 const getUser = _ => {
     var getname = document.getElementById("getname");
     var user = JSON.parse(localStorage.getItem("user"));
-    getname.innerHTML = "Name: " + user.name;
+    getname.innerHTML = `Name: ${user.name}`
 
     var getemail = document.getElementById("getemail");
     var user = JSON.parse(localStorage.getItem("user"));
-    getemail.innerHTML = "Email: " + user.email;
+    getemail.innerHTML = `Email: ${user.email}`
 
     var getphone = document.getElementById("getphone");
     var user = JSON.parse(localStorage.getItem("user"));
-    getphone.innerHTML = "Phone: " + user.contact;
+    getphone.innerHTML = `Phone: ${user.contact}`
 
     var getaddress = document.getElementById("getaddress");
     var user = JSON.parse(localStorage.getItem("user"));
-    getaddress.innerHTML = "address: " + user.address;
+    getaddress.innerHTML = `Address: ${user.address}`
 
 }
