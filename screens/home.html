@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="../css/home.css">
 </head>
 
-<body>
+<body onload="getUser()">
 
   <div class="wrapper d-flex align-items-stretch">
     <nav id="sidebar">
@@ -21,15 +21,26 @@
           style="background-image: url(https://image.freepik.com/free-vector/illustration-user-avatar-icon_53876-5907.jpg);"></a>
         <ul class="list-unstyled components mb-5">
 
-          <li>
-            <a href="#">About</a>
-          </li>
 
           <li>
-            <a href="#">Portfolio</a>
+            <a href="#" id="getname"></a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="#" id="getemail"></a>
+          </li>
+          <li>
+            <a href="#" id="getphone">Contact</a>
+          </li>
+          <li>
+            <a href="#" id="getphone" id="getaddress">Contact</a>
+          </li>
+          <hr>
+          <li>
+            <input type="submit" name="" value="Logout" href="#" onclick="logout()">
+          </li>
+          <hr>
+          <li>
+            <div class="alert alert-dark" role="alert" id="message"></div>
           </li>
         </ul>
 
@@ -46,11 +57,19 @@
           </button>
         </div>
       </nav>
-      <input type="button" value="Post" onclick="posts()">
+      <input type="text" class="form-control" id="title" placeholder="Enter Title">
+      <br>
+      <input type="text" class="form-control" id="description" placeholder="Enter Description">
+      <br>
+      <button type="button" class="btn btn-success" onclick="setDetails()">Post</button>
+      <br>
       <div id="posts">
 
+
       </div>
+
     </div>
+  </div>
   </div>
 
 </body>
@@ -61,5 +80,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="../js/main.js"></script>
+<script src="../js/app.js"></script>
+
 
 </html>

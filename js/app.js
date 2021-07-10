@@ -75,22 +75,25 @@ const logout = _ => {
 }
 
 const setDetails = _ => {
+    var posts = document.getElementById("posts")
     var title = document.getElementById("title")
     var description = document.getElementById("description");
 
-    var detail = {
-        title: title.value,
-        description: description.value
-    }
+    var post = document.createElement("li");
+    post.innerHTML = `
+    <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">${title.value}</h5>
+    <p class="card-text">${description.value}</p>
+  </div>
+</div>
+    `
+    posts.appendChild(post);
+    title.value = ''
+    description.value = ''
+    console.log("a");
 
-    localStorage.setItem("detail", JSON.stringify(detail));
-    var getTitle = document.getElementById("getTitle");
-    var getdescription = document.getElementById("getDescription");
-    var getdetail = JSON.parse(localStorage.getItem("detail"));
-
-
-    getTitle.innerHTML = "Title: " + getdetail.title;
-    getdescription.innerHTML = "Description: " + getdetail.description;
 
 }
 
