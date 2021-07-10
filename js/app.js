@@ -80,7 +80,7 @@ const setDetails = _ => {
     var description = document.getElementById("description");
 
 
-    if ((title.value = "") && (description.value = "")) {
+    if (title.value === "" && description.value === "") {
         alert("Tile or Description must be entered")
     }
     else {
